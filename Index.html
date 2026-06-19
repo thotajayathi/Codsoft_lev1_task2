@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jayathi Thota | Portfolio</title>
+<title>TechNova Landing Page</title>
 
 <style>
 
@@ -12,236 +12,213 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Segoe UI',sans-serif;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    background:#f0fdf4;
-    color:#333;
+    background:#f5f7fa;
 }
 
-/* Header */
+/* Navbar */
 
-header{
-    background:#16a34a;
-    color:white;
-    padding:20px;
-    text-align:center;
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
     position:sticky;
     top:0;
     z-index:1000;
 }
 
-nav{
-    margin-top:10px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
+.logo{
+    font-size:28px;
     font-weight:bold;
-    transition:0.3s;
+    color:#2563eb;
 }
 
-nav a:hover{
-    color:#dcfce7;
+nav ul{
+    display:flex;
+    list-style:none;
 }
 
-/* Hero Section */
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+nav ul li a:hover{
+    color:#2563eb;
+}
+
+/* Hero */
 
 .hero{
-    min-height:100vh;
+    min-height:90vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
-    background:linear-gradient(135deg,#16a34a,#15803d);
-    color:white;
     text-align:center;
+    color:white;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
     padding:20px;
 }
 
-.profile-photo{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid white;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-    margin-bottom:25px;
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
 }
 
-.hero h1{
-    font-size:55px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    font-size:24px;
-    margin-bottom:25px;
+.hero-content p{
+    font-size:20px;
+    max-width:700px;
+    margin:auto;
 }
 
 .btn{
+    display:inline-block;
+    margin-top:30px;
     padding:14px 30px;
     background:white;
-    color:#16a34a;
+    color:#2563eb;
     text-decoration:none;
     border-radius:30px;
     font-weight:bold;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:scale(1.05);
 }
 
 /* Sections */
 
 section{
-    padding:70px 10%;
+    padding:80px 10%;
 }
 
-section h2{
+.title{
     text-align:center;
-    margin-bottom:40px;
-    color:#16a34a;
-    font-size:36px;
+    font-size:40px;
+    color:#2563eb;
+    margin-bottom:50px;
 }
 
 /* About */
 
 .about{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* Services */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
     background:white;
     padding:30px;
     border-radius:15px;
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    line-height:1.8;
-    font-size:18px;
+    transition:.3s;
 }
 
-/* Skills */
+.card:hover{
+    transform:translateY(-10px);
+}
 
-.skills-container{
+.card h3{
+    margin-bottom:15px;
+    color:#2563eb;
+}
+
+/* Features */
+
+.features{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
-.skill{
+.feature{
     background:white;
-    padding:20px;
+    padding:25px;
+    border-left:5px solid #2563eb;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* CTA */
+
+.cta{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
     text-align:center;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    font-weight:bold;
-    border-top:5px solid #16a34a;
-    transition:0.3s;
+    border-radius:20px;
+    padding:60px;
 }
 
-.skill:hover{
-    transform:translateY(-5px);
-}
-
-/* Projects */
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-
-.project{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-    transition:0.3s;
-}
-
-.project:hover{
-    transform:translateY(-8px);
-}
-
-.project img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.project h3{
-    padding:15px;
-    color:#15803d;
-}
-
-.project p{
-    padding:0 15px 20px;
+.cta h2{
+    font-size:40px;
+    margin-bottom:20px;
 }
 
 /* Contact */
 
-.contact-form{
-    max-width:600px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+.contact{
+    text-align:center;
 }
 
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:14px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-}
-
-.contact-form button{
-    width:100%;
-    padding:14px;
-    background:#16a34a;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-.contact-form button:hover{
-    background:#15803d;
+.contact p{
+    margin:10px;
+    font-size:18px;
 }
 
 /* Footer */
 
 footer{
-    background:#14532d;
+    background:#111827;
     color:white;
     text-align:center;
-    padding:25px;
+    padding:20px;
 }
 
-/* Responsive */
+/* Mobile */
 
 @media(max-width:768px){
 
-.hero h1{
-    font-size:38px;
+.hero-content h1{
+    font-size:40px;
 }
 
-.hero p{
-    font-size:18px;
+nav{
+    flex-direction:column;
 }
 
-.profile-photo{
-    width:150px;
-    height:150px;
+nav ul{
+    margin-top:15px;
 }
 
-section{
-    padding:50px 6%;
+nav ul li{
+    margin:0 10px;
 }
 
 }
@@ -250,150 +227,153 @@ section{
 </head>
 <body>
 
-<header>
-
-<h1>My Portfolio</h1>
+<!-- Navbar -->
 
 <nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+    <div class="logo">TechNova</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
-</header>
+<!-- Hero -->
 
 <section class="hero">
 
-<img
-src="https://randomuser.me/api/portraits/women/44.jpg"
-alt="Profile Photo"
-class="profile-photo">
+<div class="hero-content">
+    <h1>Build Your Digital Future</h1>
 
-<h1>Hi, I'm Jayathi Thota</h1>
+    <p>
+        We create modern websites, innovative digital solutions,
+        and user-friendly experiences that help businesses grow.
+    </p>
 
-<p>Full Stack Web Developer</p>
-
-<a href="resume.pdf" class="btn" download>
-Download Resume
-</a>
+    <a href="#services" class="btn">Get Started</a>
+</div>
 
 </section>
+
+<!-- About -->
 
 <section id="about">
 
-<h2>About Me</h2>
+<h2 class="title">About Us</h2>
 
 <div class="about">
+    <p>
+        TechNova is a creative digital agency specializing in
+        web development, UI/UX design, and business solutions.
+        We help startups and businesses establish a powerful
+        online presence through modern technologies and
+        innovative designs.
+    </p>
+</div>
 
-<p>
-I am a passionate Full Stack Web Developer with strong knowledge of
-HTML, CSS, JavaScript, and MySQL.
-I enjoy building responsive, user-friendly websites and continuously
-learning new technologies to improve my development skills.
-</p>
+</section>
+
+<!-- Services -->
+
+<section id="services">
+
+<h2 class="title">Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+    <h3>Web Development</h3>
+    <p>Responsive and professional websites for all devices.</p>
+</div>
+
+<div class="card">
+    <h3>UI/UX Design</h3>
+    <p>Beautiful and user-friendly interfaces.</p>
+</div>
+
+<div class="card">
+    <h3>SEO Optimization</h3>
+    <p>Improve visibility and ranking on search engines.</p>
+</div>
+
+<div class="card">
+    <h3>Digital Marketing</h3>
+    <p>Grow your business with modern marketing strategies.</p>
+</div>
 
 </div>
 
 </section>
 
-<section id="skills">
+<!-- Features -->
 
-<h2>My Skills</h2>
+<section id="features">
 
-<div class="skills-container">
+<h2 class="title">Why Choose Us?</h2>
 
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">MySQL</div>
-<div class="skill">Git & GitHub</div>
+<div class="features">
 
+<div class="feature">
+    <h3>Fast Performance</h3>
+    <p>Optimized websites that load quickly and efficiently.</p>
 </div>
 
-</section>
-
-<section id="projects">
-
-<h2>Projects</h2>
-
-<div class="projects">
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800">
-<h3>Portfolio Website</h3>
-<p>Responsive personal portfolio website developed using HTML, CSS and JavaScript.</p>
+<div class="feature">
+    <h3>Responsive Design</h3>
+    <p>Perfect viewing experience on mobile, tablet, and desktop.</p>
 </div>
 
-<div class="project">
-<img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800">
-<h3>Student Management System</h3>
-<p>CRUD application for managing student records using database integration.</p>
+<div class="feature">
+    <h3>Modern Technology</h3>
+    <p>Built using the latest web development standards.</p>
 </div>
 
-<div class="project">
-<img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?w=800">
-<h3>Mini CRM</h3>
-<p>Lead management and customer tracking application with modern UI.</p>
+<div class="feature">
+    <h3>24/7 Support</h3>
+    <p>Dedicated support whenever you need assistance.</p>
 </div>
 
 </div>
 
 </section>
+
+<!-- CTA -->
+
+<section>
+
+<div class="cta">
+    <h2>Ready to Start Your Project?</h2>
+
+    <p>
+        Let's build something amazing together.
+    </p>
+
+    <a href="#contact" class="btn">Contact Us</a>
+</div>
+
+</section>
+
+<!-- Contact -->
 
 <section id="contact">
 
-<h2>Contact Me</h2>
+<h2 class="title">Contact Us</h2>
 
-<div class="contact-form">
-
-<input type="text" id="name" placeholder="Your Name">
-
-<input type="email" id="email" placeholder="Your Email">
-
-<textarea id="message" rows="5" placeholder="Your Message"></textarea>
-
-<button onclick="sendMessage()">
-Send Message
-</button>
-
+<div class="contact">
+    <p>📧 info@technova.com</p>
+    <p>📞 +91 9876543210</p>
+    <p>📍 Andhra Pradesh, India</p>
 </div>
 
 </section>
 
+<!-- Footer -->
+
 <footer>
-
-<p>© 2026 Jayathi Thota | All Rights Reserved</p>
-
+    <p>© 2026 TechNova. All Rights Reserved.</p>
 </footer>
-
-<script>
-
-function sendMessage(){
-
-let name=document.getElementById("name").value;
-let email=document.getElementById("email").value;
-let message=document.getElementById("message").value;
-
-if(name==="" || email==="" || message===""){
-alert("Please fill all fields");
-return;
-}
-
-alert(
-"Message Sent Successfully!\n\nName: "
-+ name +
-"\nEmail: "
-+ email
-);
-
-document.getElementById("name").value="";
-document.getElementById("email").value="";
-document.getElementById("message").value="";
-
-}
-
-</script>
 
 </body>
 </html>
